@@ -1,4 +1,5 @@
 var output = document.getElementById("output");
+var clearButton = document.getElementById("clear");
 
 
 // T(°C) = (T(°F) - 32) × 5/9
@@ -45,7 +46,15 @@ function determineConverter (clickEvent) {
     }
 }
 
+function clearDatShit() {
+ document.getElementById("F").checked = false;
+ document.getElementById("C").checked = false;
+ output.innerHTML = "";
+ document.getElementById("toConvert").value = "";
+}
+
 
 
 // Assign a function to be executed when the button is clicked
 button.addEventListener("click", determineConverter);
+clearButton.addEventListener("click", clearDatShit);
